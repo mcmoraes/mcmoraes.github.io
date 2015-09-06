@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chamaeleo dilepis</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+    <style media="screen" type="text/css">
+    div.chamaleo {
+      margin: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      vertical-align: middle;
+    }
+    </style>
+</head>
+
+<body ng-app="chamaleo_app">
+
+<div class="chamaleo" ng-controller="chamaleo_controller" ng-click="clicked()" ng-mousedown="close_eye()">
+<br/><br/><br/><br/><br/>
+<pre>   
+                    .:| Chamaeleo dilepis |:.
+
+                                                      __......._    _..--._,--._
+                                                _.--''  , ,:   :``-/  :.` (-`,{{eye}})``-._
+                                             ,-'`::.      ::  .: ` `-._    `--' :. __\
+                                          ,-':   `::  `   :: ,:;     . \  :.  _.-''  /
+                                        ,'  `:.`  ::. ,   `:.::.  ,  `: `. _,' . ` ,`
+                                     _,' `   `:.  `::       `::;     ,    ` __.,.-`
+                     `-._         _,'  `:   .-::-.  ::  `    ,:  ,' /. )-'''
+                      `  ``--.._,'`:._  `:.     ,: \ `:.___.,::..--/: / /
+                          . _.-'    _.--'``--''`'`.:\'''-`------..( `(._`._____.....---
+                    -..___,'`:_..-''   -  _   -.  _\.`.      -     `:.`.       ,`
+                        ,:. ,'---...._______  ,     \_.`. -=    `  , `..\ ,  -     .-  _
+                       /  ,'    ___         ```````---`,)'-------....._).`.____,.__....---
+                      :  :    ,',-.:.                                  `'`'
+                      |  |   ( (   \ \
+                      ::.:    `.:, /./
+                       `. `-..__..' /
+                         `-.::__.:-'
+
+</pre>
+</div>
+
+<script>
+
+var module = angular.module('chamaleo_app', []);
+
+module.controller("chamaleo_controller", function($scope) {
+    var eye = "o"
+    $scope.eye = eye
+    $scope.clicked = function() {
+        $scope.eye = eye
+        $scope.$apply();
+    };
+    $scope.close_eye = function() {
+        $scope.eye = "="
+        $scope.$apply();
+    };
+});
+
+</script>
+
+</body>
+
+</html>
